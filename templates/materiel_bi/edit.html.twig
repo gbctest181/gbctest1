@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit MaterielBI{% endblock %}
+
+{% block body %}
+    <h1>Edit MaterielBI</h1>
+
+    {{ include('materiel_b_i/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('materiel_b_i_index') }}">back to list</a>
+
+    {{ include('materiel_b_i/_delete_form.html.twig') }}
+{% endblock %}

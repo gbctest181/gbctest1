@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MaterielBI{% endblock %}
+
+{% block body %}
+    <h1>MaterielBI</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ materiel_b_i.id }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ materiel_b_i.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Prix_totalHT</th>
+                <td>{{ materiel_b_i.prixTotalHT }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('materiel_b_i_index') }}">back to list</a>
+
+    <a href="{{ path('materiel_b_i_edit', {'id': materiel_b_i.id}) }}">edit</a>
+
+    {{ include('materiel_b_i/_delete_form.html.twig') }}
+{% endblock %}

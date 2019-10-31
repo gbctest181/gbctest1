@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MaterielVE{% endblock %}
+
+{% block body %}
+    <h1>MaterielVE</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ materiel_v_e.id }}</td>
+            </tr>
+            <tr>
+                <th>Emplacement</th>
+                <td>{{ materiel_v_e.emplacement }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ materiel_v_e.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Observation</th>
+                <td>{{ materiel_v_e.observation }}</td>
+            </tr>
+            <tr>
+                <th>Resultat_test</th>
+                <td>{{ materiel_v_e.resultatTest }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('materiel_v_e_index') }}">back to list</a>
+
+    <a href="{{ path('materiel_v_e_edit', {'id': materiel_v_e.id}) }}">edit</a>
+
+    {{ include('materiel_v_e/_delete_form.html.twig') }}
+{% endblock %}

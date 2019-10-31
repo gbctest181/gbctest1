@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alimentation{% endblock %}
+
+{% block body %}
+    <h1>Alimentation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ alimentation.id }}</td>
+            </tr>
+            <tr>
+                <th>Tension_chargeur</th>
+                <td>{{ alimentation.tensionChargeur }}</td>
+            </tr>
+            <tr>
+                <th>Tension_batterie</th>
+                <td>{{ alimentation.tensionBatterie }}</td>
+            </tr>
+            <tr>
+                <th>Conso_service</th>
+                <td>{{ alimentation.consoService }}</td>
+            </tr>
+            <tr>
+                <th>Capacite_batterie</th>
+                <td>{{ alimentation.capaciteBatterie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('alimentation_index') }}">back to list</a>
+
+    <a href="{{ path('alimentation_edit', {'id': alimentation.id}) }}">edit</a>
+
+    {{ include('alimentation/_delete_form.html.twig') }}
+{% endblock %}

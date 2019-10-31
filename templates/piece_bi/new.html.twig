@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PieceBI{% endblock %}
+
+{% block body %}
+    <h1>Create new PieceBI</h1>
+
+    {{ include('piece_b_i/_form.html.twig') }}
+
+    <a href="{{ path('piece_b_i_index') }}">back to list</a>
+{% endblock %}

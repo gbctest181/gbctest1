@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PieceVE{% endblock %}
+
+{% block body %}
+    <h1>PieceVE</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ piece_v_e.id }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ piece_v_e.marque }}</td>
+            </tr>
+            <tr>
+                <th>Modele</th>
+                <td>{{ piece_v_e.modele }}</td>
+            </tr>
+            <tr>
+                <th>Version_logiciel</th>
+                <td>{{ piece_v_e.versionLogiciel }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ piece_v_e.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('piece_v_e_index') }}">back to list</a>
+
+    <a href="{{ path('piece_v_e_edit', {'id': piece_v_e.id}) }}">edit</a>
+
+    {{ include('piece_v_e/_delete_form.html.twig') }}
+{% endblock %}

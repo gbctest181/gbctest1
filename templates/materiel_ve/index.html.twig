@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MaterielVE index{% endblock %}
+
+{% block body %}
+    <h1>MaterielVE index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Emplacement</th>
+                <th>Quantite</th>
+                <th>Observation</th>
+                <th>Resultat_test</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for materiel_v_e in materiel_v_es %}
+            <tr>
+                <td>{{ materiel_v_e.id }}</td>
+                <td>{{ materiel_v_e.emplacement }}</td>
+                <td>{{ materiel_v_e.quantite }}</td>
+                <td>{{ materiel_v_e.observation }}</td>
+                <td>{{ materiel_v_e.resultatTest }}</td>
+                <td>
+                    <a href="{{ path('materiel_v_e_show', {'id': materiel_v_e.id}) }}">show</a>
+                    <a href="{{ path('materiel_v_e_edit', {'id': materiel_v_e.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('materiel_v_e_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ClientIntervention{% endblock %}
+
+{% block body %}
+    <h1>Create new ClientIntervention</h1>
+
+    {{ include('client_intervention/_form.html.twig') }}
+
+    <a href="{{ path('client_intervention_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MaterielBI index{% endblock %}
+
+{% block body %}
+    <h1>MaterielBI index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantite</th>
+                <th>Prix_totalHT</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for materiel_b_i in materiel_b_is %}
+            <tr>
+                <td>{{ materiel_b_i.id }}</td>
+                <td>{{ materiel_b_i.quantite }}</td>
+                <td>{{ materiel_b_i.prixTotalHT }}</td>
+                <td>
+                    <a href="{{ path('materiel_b_i_show', {'id': materiel_b_i.id}) }}">show</a>
+                    <a href="{{ path('materiel_b_i_edit', {'id': materiel_b_i.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('materiel_b_i_new') }}">Create new</a>
+{% endblock %}

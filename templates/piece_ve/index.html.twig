@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PieceVE index{% endblock %}
+
+{% block body %}
+    <h1>PieceVE index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Modele</th>
+                <th>Version_logiciel</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for piece_v_e in piece_v_es %}
+            <tr>
+                <td>{{ piece_v_e.id }}</td>
+                <td>{{ piece_v_e.marque }}</td>
+                <td>{{ piece_v_e.modele }}</td>
+                <td>{{ piece_v_e.versionLogiciel }}</td>
+                <td>{{ piece_v_e.type }}</td>
+                <td>
+                    <a href="{{ path('piece_v_e_show', {'id': piece_v_e.id}) }}">show</a>
+                    <a href="{{ path('piece_v_e_edit', {'id': piece_v_e.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('piece_v_e_new') }}">Create new</a>
+{% endblock %}

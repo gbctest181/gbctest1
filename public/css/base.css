@@ -1,0 +1,52 @@
+/* @font-face {
+    font-family: "";
+    src: url("/fonts/.ttf");
+} */
+body{
+    list-style-type: none;
+    background-color: rgba(34, 34, 34, 0.45);
+    color: #f6f6f6;
+}
+h1{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+th, td{
+    border: 1px solid rgba(34, 34, 34, 0.6);
+    text-align: center;
+}
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    background-color: #3c5482;
+    color: #FFFFFF;
+    padding: 14px 20px;
+    margin: 20px 20px;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
+
+input[type=submit]:hover {
+    background-color: #f7a100 ;
+    color: #FFFFFF;
+    border: 1px solid rgba(247, 161, 0, 0.6);
+}
+a{
+    background-color: #3c5482;
+    text-decoration: none;
+    color: #ffff;
+}
+
+
+
+

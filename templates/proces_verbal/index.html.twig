@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProcesVerbal index{% endblock %}
+
+{% block body %}
+    <h1>ProcesVerbal index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Devis</th>
+                <th>Date_devis</th>
+                <th>Commande_client</th>
+                <th>Date_commande</th>
+                <th>Cctp</th>
+                <th>Date_cctp</th>
+                <th>Siganture_client</th>
+                <th>Signature_gbc</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proces_verbal in proces_verbals %}
+            <tr>
+                <td>{{ proces_verbal.id }}</td>
+                <td>{{ proces_verbal.devis }}</td>
+                <td>{{ proces_verbal.dateDevis ? proces_verbal.dateDevis|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ proces_verbal.commandeClient }}</td>
+                <td>{{ proces_verbal.dateCommande ? proces_verbal.dateCommande|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ proces_verbal.cctp }}</td>
+                <td>{{ proces_verbal.dateCctp ? proces_verbal.dateCctp|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ proces_verbal.sigantureClient }}</td>
+                <td>{{ proces_verbal.signatureGbc }}</td>
+                <td>
+                    <a href="{{ path('proces_verbal_show', {'id': proces_verbal.id}) }}">show</a>
+                    <a href="{{ path('proces_verbal_edit', {'id': proces_verbal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('proces_verbal_new') }}">Create new</a>
+{% endblock %}

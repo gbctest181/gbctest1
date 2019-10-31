@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alimentation index{% endblock %}
+
+{% block body %}
+    <h1>Alimentation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tension_chargeur</th>
+                <th>Tension_batterie</th>
+                <th>Conso_service</th>
+                <th>Capacite_batterie</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alimentation in alimentations %}
+            <tr>
+                <td>{{ alimentation.id }}</td>
+                <td>{{ alimentation.tensionChargeur }}</td>
+                <td>{{ alimentation.tensionBatterie }}</td>
+                <td>{{ alimentation.consoService }}</td>
+                <td>{{ alimentation.capaciteBatterie }}</td>
+                <td>
+                    <a href="{{ path('alimentation_show', {'id': alimentation.id}) }}">show</a>
+                    <a href="{{ path('alimentation_edit', {'id': alimentation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('alimentation_new') }}">Create new</a>
+{% endblock %}

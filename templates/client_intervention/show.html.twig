@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClientIntervention{% endblock %}
+
+{% block body %}
+    <h1>ClientIntervention</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client_intervention.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ client_intervention.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ client_intervention.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Code_postal</th>
+                <td>{{ client_intervention.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ client_intervention.ville }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ client_intervention.date ? client_intervention.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ client_intervention.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ client_intervention.fax }}</td>
+            </tr>
+            <tr>
+                <th>Mobile</th>
+                <td>{{ client_intervention.mobile }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ client_intervention.mail }}</td>
+            </tr>
+            <tr>
+                <th>Representant</th>
+                <td>{{ client_intervention.representant }}</td>
+            </tr>
+            <tr>
+                <th>Fonction</th>
+                <td>{{ client_intervention.fonction }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_intervention_index') }}">back to list</a>
+
+    <a href="{{ path('client_intervention_edit', {'id': client_intervention.id}) }}">edit</a>
+
+    {{ include('client_intervention/_delete_form.html.twig') }}
+{% endblock %}

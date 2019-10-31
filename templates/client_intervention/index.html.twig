@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClientIntervention index{% endblock %}
+
+{% block body %}
+    <h1>ClientIntervention index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Code_postal</th>
+                <th>Ville</th>
+                <th>Date</th>
+                <th>Telephone</th>
+                <th>Fax</th>
+                <th>Mobile</th>
+                <th>Mail</th>
+                <th>Representant</th>
+                <th>Fonction</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client_intervention in client_interventions %}
+            <tr>
+                <td>{{ client_intervention.id }}</td>
+                <td>{{ client_intervention.nom }}</td>
+                <td>{{ client_intervention.adresse }}</td>
+                <td>{{ client_intervention.codePostal }}</td>
+                <td>{{ client_intervention.ville }}</td>
+                <td>{{ client_intervention.date ? client_intervention.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ client_intervention.telephone }}</td>
+                <td>{{ client_intervention.fax }}</td>
+                <td>{{ client_intervention.mobile }}</td>
+                <td>{{ client_intervention.mail }}</td>
+                <td>{{ client_intervention.representant }}</td>
+                <td>{{ client_intervention.fonction }}</td>
+                <td>
+                    <a href="{{ path('client_intervention_show', {'id': client_intervention.id}) }}">show</a>
+                    <a href="{{ path('client_intervention_edit', {'id': client_intervention.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_intervention_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProcesVerbal{% endblock %}
+
+{% block body %}
+    <h1>ProcesVerbal</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ proces_verbal.id }}</td>
+            </tr>
+            <tr>
+                <th>Devis</th>
+                <td>{{ proces_verbal.devis }}</td>
+            </tr>
+            <tr>
+                <th>Date_devis</th>
+                <td>{{ proces_verbal.dateDevis ? proces_verbal.dateDevis|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Commande_client</th>
+                <td>{{ proces_verbal.commandeClient }}</td>
+            </tr>
+            <tr>
+                <th>Date_commande</th>
+                <td>{{ proces_verbal.dateCommande ? proces_verbal.dateCommande|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Cctp</th>
+                <td>{{ proces_verbal.cctp }}</td>
+            </tr>
+            <tr>
+                <th>Date_cctp</th>
+                <td>{{ proces_verbal.dateCctp ? proces_verbal.dateCctp|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Siganture_client</th>
+                <td>{{ proces_verbal.sigantureClient }}</td>
+            </tr>
+            <tr>
+                <th>Signature_gbc</th>
+                <td>{{ proces_verbal.signatureGbc }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('proces_verbal_index') }}">back to list</a>
+
+    <a href="{{ path('proces_verbal_edit', {'id': proces_verbal.id}) }}">edit</a>
+
+    {{ include('proces_verbal/_delete_form.html.twig') }}
+{% endblock %}
