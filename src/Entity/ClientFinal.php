@@ -212,5 +212,22 @@ class ClientFinal
         return $this;
     }
 
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s";
+        return sprintf($format,
+            $this->raison_sociale,
+            $this->enseigne,
+            $this->nom_responsable,
+            $this->adresse,
+            $this->code_postal,
+            $this->ville,
+            $this->telephone,
+            $this->fax,
+            $this->mobile,
+            $this->mail
+        );
+    }
+
 
 }

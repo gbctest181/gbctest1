@@ -239,4 +239,20 @@ class Intervention
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s,%s,%s,%s,%s,%s";
+        return sprintf($format,
+            $this->date,
+            $this->rapport_technicien,
+            $this->observation_client,
+            $this->signature_client,
+            $this->signature_gbc,
+            $this->fk_clientIntervention,
+            $this->fk_materielBI,
+            $this->fk_materielVE,
+            $this->fk_technicien
+        );
+    }
 }

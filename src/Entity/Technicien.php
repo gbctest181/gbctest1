@@ -106,4 +106,15 @@ class Technicien
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s";
+        return sprintf($format,
+            $this->nom,
+            $this->prenom,
+            $this->mobile,
+            $this->mail
+        );
+    }
 }

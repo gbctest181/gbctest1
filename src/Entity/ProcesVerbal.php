@@ -174,4 +174,19 @@ class ProcesVerbal
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s,%s,%s,%s,%s";
+        return sprintf($format,
+            $this->devis,
+            $this->date_devis,
+            $this->commande_client,
+            $this->date_commande,
+            $this->cctp,
+            $this->date_cctp,
+            $this->signature_gbc,
+            $this->siganture_client
+        );
+    }
 }

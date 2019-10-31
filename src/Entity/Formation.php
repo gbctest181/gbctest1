@@ -140,4 +140,17 @@ class Formation
 
         return $this;
     }
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s,%s,%s";
+        return sprintf($format,
+            $this->nom,
+            $this->prenom,
+            $this->fonction,
+            $this->heure_debut,
+            $this->heure_fin,
+            $this->signature
+        );
+    }
+
 }

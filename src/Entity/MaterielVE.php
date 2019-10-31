@@ -186,4 +186,17 @@ class MaterielVE
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s,%s,%s";
+        return sprintf($format,
+            $this->emplacement,
+            $this->quantite,
+            $this->observation,
+            $this->resultat_test,
+            $this->fk_pieceVE,
+            $this->fk_alimentation
+        );
+    }
 }

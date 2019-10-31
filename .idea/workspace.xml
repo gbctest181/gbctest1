@@ -121,6 +121,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\gbc\gbconcept34\public\css" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -145,7 +150,7 @@
       <updated>1572510665106</updated>
       <workItem from="1572510670979" duration="4254000" />
       <workItem from="1572527994591" duration="3998000" />
-      <workItem from="1572532232781" duration="3228000" />
+      <workItem from="1572532232781" duration="4597000" />
     </task>
     <servers />
   </component>

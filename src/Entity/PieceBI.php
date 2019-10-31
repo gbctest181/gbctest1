@@ -89,4 +89,15 @@ class PieceBI
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s";
+        return sprintf($format,
+            $this->id,
+            $this->code,
+            $this->designation,
+            $this->prixU_HT
+        );
+    }
 }

@@ -106,4 +106,15 @@ class PieceVE
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s";
+        return sprintf($format,
+            $this->marque,
+            $this->modele,
+            $this->version_logiciel,
+            $this->type
+        );
+    }
 }

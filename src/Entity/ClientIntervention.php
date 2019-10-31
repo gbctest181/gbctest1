@@ -364,4 +364,24 @@ class ClientIntervention
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s";
+        return sprintf($format,
+            $this->nom,
+            $this->representant,
+            $this->fonction,
+            $this->adresse,
+            $this->code_postal,
+            $this->ville,
+            $this->telephone,
+            $this->fax,
+            $this->mobile,
+            $this->mail,
+            $this->fk_clientFinal,
+            $this->fk_formation,
+            $this->fk_procesVerbal
+        );
+    }
 }

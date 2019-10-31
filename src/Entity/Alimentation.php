@@ -106,4 +106,15 @@ class Alimentation
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s";
+        return sprintf($format,
+            $this->tension_chargeur,
+            $this->tension_batterie,
+            $this->conso_service,
+            $this->capacite_batterie
+        );
+    }
 }

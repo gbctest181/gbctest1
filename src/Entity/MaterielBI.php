@@ -115,4 +115,15 @@ class MaterielBI
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $format = "%s,%s,%s,%s";
+        return sprintf($format,
+            $this->id,
+            $this->quantite,
+            $this->prix_totalHT,
+            $this->fk_pieceBI
+        );
+    }
 }
